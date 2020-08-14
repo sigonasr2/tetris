@@ -11,4 +11,7 @@ public class Block {
 		this.active=active;
 		this.color=col;
 	}
+	public String toString() {
+		return active?"O":"-";
+	}
 }
