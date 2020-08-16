@@ -6,12 +6,13 @@ import java.awt.font.FontRenderContext;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 import java.util.List;
-import sig.MyRobot;
+
+import javax.swing.JPanel;
 
 public class TextUtils {
 
-	public static Rectangle2D calculateStringBoundsFont(String msg, Font font) {
-		FontRenderContext frc = MyRobot.p.getFontMetrics(font).getFontRenderContext();
+	public static Rectangle2D calculateStringBoundsFont(JPanel panel,String msg, Font font) {
+		FontRenderContext frc = panel.getFontMetrics(font).getFontRenderContext();
 		return font.getStringBounds(msg, frc);
 	}
 	

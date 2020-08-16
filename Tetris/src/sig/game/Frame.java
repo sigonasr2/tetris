@@ -15,6 +15,7 @@ public class Frame {
 			Shape s4,
 			Color col) {
 		shape = new Shape[]{s1,s2,s3,s4};
+		s1.col=s2.col=s3.col=s4.col=col;
 		this.col=col;
 	}
 	

@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Grid {
 	
 	final int GRID_WIDTH = 10;
-	final int GRID_HEIGHT = 20;
+	final int GRID_HEIGHT = 24;
 	
 	Block[][] grid = new Block[GRID_WIDTH][GRID_HEIGHT];
 

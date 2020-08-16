@@ -17,7 +17,8 @@ import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 import java.text.AttributedString;
 
-import sig.MyPanel;
+import javax.swing.JPanel;
+
 
 public class DrawUtils {
 	public static void drawOutlineText(Graphics g, Font font, double x, double y, int outline_size, Color text_color, Color shadow_color, String message) {
@@ -58,19 +59,19 @@ public class DrawUtils {
 			g2.drawString(as.getIterator(),(int)(x+xoffset),(int)(y+yoffset));
 		}
 	}
-	public static void drawCenteredOutlineText(Graphics g, Font font, double x, double y, int font_size, int outline_size, Color text_color, Color shadow_color, String message) {
-		Rectangle2D textBounds = TextUtils.calculateStringBoundsFont(message, font);
+	public static void drawCenteredOutlineText(Graphics g, Font font,JPanel panel, double x, double y, int font_size, int outline_size, Color text_color, Color shadow_color, String message) {
+		Rectangle2D textBounds = TextUtils.calculateStringBoundsFont(panel,message, font);
 		drawOutlineText(g,font,x,y,-textBounds.getWidth()/2,-textBounds.getHeight()/2,font_size,outline_size,text_color,shadow_color,message);
 	}
-	public static void drawCenteredOutlineText(Graphics g, Font font, double x, double y, int outline_size, Color text_color, Color shadow_color, String message) {
-		drawCenteredOutlineText(g,font,x,y,1,outline_size,text_color,shadow_color,message);
+	public static void drawCenteredOutlineText(Graphics g, Font font,JPanel panel, double x, double y, int outline_size, Color text_color, Color shadow_color, String message) {
+		drawCenteredOutlineText(g,font,panel,x,y,1,outline_size,text_color,shadow_color,message);
 	}
 	public static void drawText(Graphics g, double x, double y, Color color, String message) {
 		if (message.length()>0) {
-			AttributedString as = new AttributedString(message);
-			as.addAttribute(TextAttribute.FONT, MyPanel.programFont);
+			/*AttributedString as = new AttributedString(message);
+			as.addAttribute(TextAttribute.FONT, MyPanel.programFont);*/
 			g.setColor(color);
-			g.drawString(as.getIterator(),(int)x,(int)y);
+			g.drawString(message,(int)x,(int)y);
 		}
 	}
 	public static void drawTextFont(Graphics g, Font font, double x, double y, Color color, String message) {
@@ -90,11 +91,11 @@ public class DrawUtils {
 	/**
 	 * Centers the text along the X Axis.
 	 */
-	public static void drawCenteredText(Graphics g, Font font, int x, int y, Color color, String text) {
+	public static void drawCenteredText(Graphics g, Font font,JPanel panel, int x, int y, Color color, String text) {
 		AttributedString as = new AttributedString(text);
 		as.addAttribute(TextAttribute.FONT, font);
 		g.setColor(color);
-		Rectangle2D textBounds = TextUtils.calculateStringBoundsFont(text, font);
+		Rectangle2D textBounds = TextUtils.calculateStringBoundsFont(panel,text, font);
 		g.drawString(as.getIterator(),(int)(x-textBounds.getWidth()/2),(int)(y+textBounds.getHeight()));
 	}
 	
