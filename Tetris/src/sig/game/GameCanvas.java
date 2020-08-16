@@ -23,7 +23,7 @@ public class GameCanvas extends JPanel implements KeyListener{
 	public final static int FIELD_HEIGHT = BLOCK_SIZE*20;
 	
 	public final static int FIELD_STARTX = WINDOW_WIDTH/2-FIELD_WIDTH/2;
-	public final static int FIELD_STARTY = WINDOW_HEIGHT/2+FIELD_HEIGHT/2;
+	public final static int FIELD_STARTY = WINDOW_HEIGHT/2+FIELD_HEIGHT/2-BLOCK_SIZE;
 	
 	public final static int LINES_CLEARED_DISPLAYX = WINDOW_WIDTH/2+180;
 	public final static int LINES_CLEARED_DISPLAYY = WINDOW_HEIGHT/2;
