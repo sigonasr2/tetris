@@ -20,6 +20,7 @@ public class Player {
 	public void ShuffleNextPiece() {
 		piece = nextPiece.clone();
 		nextPiece = SelectRandomTetrimino();
+		Game.rotation=0;
 		pos = new Point(5,21);
 	}
 	

@@ -68,7 +68,7 @@ public class GameCanvas extends JPanel implements KeyListener{
 		g.fill3DRect(NEXTPIECE_DISPLAYX, NEXTPIECE_DISPLAYY, 104, 104, true);
 		for (Point p : nextPoints) {
 			g.setColor(Game.p.getNextShape().col.getColor());
-			g.fill3DRect(p.x*BLOCK_SIZE+NEXTPIECE_DISPLAYX+52, p.y*BLOCK_SIZE+NEXTPIECE_DISPLAYY+52, BLOCK_SIZE, BLOCK_SIZE, false);
+			g.fill3DRect(p.x*BLOCK_SIZE+NEXTPIECE_DISPLAYX+52, -p.y*BLOCK_SIZE+NEXTPIECE_DISPLAYY, BLOCK_SIZE, BLOCK_SIZE, false);
 		}
 		g.setColor(java.awt.Color.WHITE);
 		g.setFont(displayText);
